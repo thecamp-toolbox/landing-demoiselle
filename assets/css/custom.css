@@ -1,0 +1,51 @@
+/* 
+/* 
+/*  custom.css
+/*
+/*  If not using Gulp and Sass, add your custom CSS below then include it
+/*  in your page by adding a reference to assets/css/custom.css in the head of each page.
+/*
+*/
+.navbar-brand img {
+	height: 40px;
+}
+.bg-dark, .navbar {
+	background-color: #27348b !important;
+}
+.logos {
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    padding: 20px;
+    max-width: 100%;
+}
+.col-md-1 .logos {
+	padding: 5px;
+}
+.logos:hover {
+	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+#partenaires h4 {
+	margin-bottom: 1.2rem;
+}
+.selected {
+	stroke: #2d2e83 !important;
+}
+#trajet .card {
+	margin-bottom: 0rem;
+	border-radius: 0px;
+}
+#trajet .card:first-child {
+	border-top-left-radius: 0.25rem;
+	border-top-right-radius: 0.25rem;
+}
+#trajet .card:last-child {
+	border-bottom-left-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
+}
+#trajet .card-header {
+	padding: 0.5rem;
+}
+video+p {
+	padding-top: 10px;
+}
