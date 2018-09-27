@@ -3,17 +3,20 @@
 
 $(document).ready ( function(){
 	toSVG(initmap);
+	
 })
 
 function initmap() {
 	setTimeout( function() 
 	  {
 	    $('#zone1').toggleClass('selected');
-	  }, 1000);
+
+	    interactions();
+	  }, 2000);
 };
 
 function toSVG(callback) {
-	jQuery('img.svg').each(function(){
+	jQuery('svg.svg').each(function(){
 	    var $img = jQuery(this);
 	    var imgID = $img.attr('id');
 	    var imgClass = $img.attr('class');
@@ -45,23 +48,47 @@ function toSVG(callback) {
 	callback();
 };
 
-$('#collapseOne').on('show.bs.collapse', function () {
-	$('.selected').toggleClass('selected');
-	$('#zone1').toggleClass('selected');
-});
-$('#collapseTwo').on('show.bs.collapse', function () {
-	$('.selected').toggleClass('selected');
-	$('#zone2').toggleClass('selected');
-});
-$('#collapseThree').on('show.bs.collapse', function () {
-	$('.selected').toggleClass('selected');
-	$('#zone3').toggleClass('selected');
-});
-$('#collapseFour').on('show.bs.collapse', function () {
-	$('.selected').toggleClass('selected');
-	$('#zone4').toggleClass('selected');
-});
 
-$('#zone1').click( function(){
-  console.log('zone1');
-});
+
+function interactions() {
+	$('#collapseOne').on('shown.bs.collapse', function () {
+		$('.selected').toggleClass('selected');
+		$('#zone1').toggleClass('selected');
+	});
+	$('#collapseTwo').on('shown.bs.collapse', function () {
+		$('.selected').toggleClass('selected');
+		$('#zone2').toggleClass('selected');
+	});
+	$('#collapseThree').on('shown.bs.collapse', function () {
+		$('.selected').toggleClass('selected');
+		$('#zone3').toggleClass('selected');
+	});
+	$('#collapseFour').on('shown.bs.collapse', function () {
+		$('.selected').toggleClass('selected');
+		$('#zone4').toggleClass('selected');
+	});
+
+
+	$('#zone1').click( function(){
+		$('.selected').toggleClass('selected');
+		$('#zone1').toggleClass('selected');
+		$('#collapseOne').collapse('toggle');
+	});
+	$('#zone2').click( function(){
+		$('.selected').toggleClass('selected');
+		$('#zone2').toggleClass('selected');
+		$('#collapseTwo').collapse('toggle');
+	});
+	$('#zone3').click( function(){
+		$('.selected').toggleClass('selected');
+		$('#zone3').toggleClass('selected');
+		$('#collapseThree').collapse('toggle');
+	});
+	$('#zone4').click( function(){
+		$('.selected').toggleClass('selected');
+		$('#zone4').toggleClass('selected');
+		$('#collapseFour').collapse('toggle');
+	});
+
+
+};
